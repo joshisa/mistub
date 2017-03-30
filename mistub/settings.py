@@ -13,7 +13,12 @@ import os
 import json
 import re
 import redis
-from models import (corpora)
+from models import (corpora, 
+                    concepts,
+                    documents,
+                    relations,
+                    search,
+                    status)
 
 __author__ = "Sanjay Joshi"
 __copyright__ = "IBM Copyright 2015"
@@ -82,6 +87,12 @@ else:
     MONGO_PASSWORD = 'user'
     MONGO_DBNAME = 'apitest'
 
+# Artificial constraints to hide extra response data and mimic stub API design
+HATEOAS = False
+PAGINATION = False
+PAGINATION_LIMIT = 1
+PAGINATION_DEFAULT = 1
+
 # Enable URL_PREFIX.  Used in conjunction with API_VERSION to build
 # API Endpoints of the form <base_route>/<url_prefix>/<api_version>/
 URL_PREFIX = 'api'
@@ -127,4 +138,9 @@ X_HEADERS = ['Origin', 'X-Requested-With', 'Content-Type', 'Accept']
 # and structure.
 DOMAIN = {
     'corpora': corpora.schema,
+    'concepts': concepts.schema,
+    'documents': documents.schema,
+    'relations': relations.schema,
+    'search': search.schema,
+    'status': status.schema
 }

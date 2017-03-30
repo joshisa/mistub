@@ -12,7 +12,7 @@ __email__ = "joshisa@us.ibm.com"
 __status__ = "Prototype"
 
 schema = {
-    'url': 'ada_diabetes/concepts',
+    'url': 'corpora',
     'schema': {
         'cloudhost': {
             'type': 'string',
