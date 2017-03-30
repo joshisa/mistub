@@ -74,7 +74,7 @@ echo -e "${tools}  ${Yellow}Installing Redis, Flask, Eve, Eve-docs, Eve-Swagger 
 ~/.local/bin/pip install --user -r ./requirements.txt
 
 echo -e "${eyes} ${Yellow}Running Python-Eve REST API Test Server${no_color}"
-python ./macreduce/run.py &
+python ./mistub/run.py &
 sleep 2
 
 # Setup Nose

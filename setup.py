@@ -6,13 +6,13 @@ except ImportError:
 config = {
     'description': 'Python Eve Sample Deploy powered by IBM Bluemix',
     'author': 'Sanjay Joshi, ...',
-    'url': 'http://macreduce.mybluemix.net',
+    'url': 'http://mistub.mybluemix.net',
     'author_email': 'joshisa@us.ibm.com',
     'version': '0.1',
     'install_requires': ['nose', 'eve', 'redis'],
-    'packages': ['macreduce'],
+    'packages': ['mistub'],
     'scripts': [],
-    'name': 'macreduce'
+    'name': 'mistub'
 }
 
 setup(**config)

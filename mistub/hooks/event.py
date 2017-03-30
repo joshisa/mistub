@@ -33,7 +33,7 @@ def before_returning_items(resource, request, lookup):
         traceback.print_exc()
 
 
-def on_fetched_resource(resource, response):
+def on_fetched_resource_status(response):
     try:
         print("Returning first response element only")
         # Stash first entry

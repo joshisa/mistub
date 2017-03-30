@@ -1,1 +1,1 @@
-web: python ./macreduce/run.py
+web: python ./mistub/run.py

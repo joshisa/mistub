@@ -8,7 +8,7 @@ declared-services:
     plan: 30mb
 
 applications:
-- name: macreduce
+- name: mistub
   memory: 256M 
   instances: 1
   domain: mybluemix.net
