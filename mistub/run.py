@@ -19,7 +19,7 @@ from eve_swagger import swagger
 from routes import home
 from hooks.event import (before_returning_items,
                          after_returning_items,
-                         on_fetched_resource_status)
+                         on_fetched_resource_firstone)
 from gevent import wsgi, monkey, socket
 import os
 from platform import python_version
@@ -75,7 +75,10 @@ app.on_post_GET_mac += \
     after_returning_items
 
 app.on_fetched_resource_status += \
-    on_fetched_resource_status
+    on_fetched_resource_firstone
+
+app.on_fetched_resource_statushealthcheck += \
+    on_fetched_resource_firstone
 
 app.config['SWAGGER_INFO'] = {
     'title': 'MIstub API',

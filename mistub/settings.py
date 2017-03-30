@@ -18,7 +18,8 @@ from models import (corpora,
                     documents,
                     relations,
                     search,
-                    status)
+                    status,
+                    statushealthcheck)
 
 __author__ = "Sanjay Joshi"
 __copyright__ = "IBM Copyright 2015"
@@ -92,6 +93,7 @@ HATEOAS = False
 PAGINATION = False
 PAGINATION_LIMIT = 1
 PAGINATION_DEFAULT = 1
+XTRAPOP = True
 
 # Enable URL_PREFIX.  Used in conjunction with API_VERSION to build
 # API Endpoints of the form <base_route>/<url_prefix>/<api_version>/
@@ -142,5 +144,6 @@ DOMAIN = {
     'documents': documents.schema,
     'relations': relations.schema,
     'search': search.schema,
-    'status': status.schema
+    'status': status.schema,
+    'statushealthcheck': statushealthcheck.schema
 }

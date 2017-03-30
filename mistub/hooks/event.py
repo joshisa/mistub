@@ -9,7 +9,8 @@ flow of triggers and events to resources
 
 import traceback
 from settings import (LANGUAGES,
-                      LANGUAGE_DEFAULT)
+                      LANGUAGE_DEFAULT,
+                      XTRAPOP)
 
 __author__ = "Sanjay Joshi"
 __copyright__ = "IBM Copyright 2016"
@@ -33,7 +34,7 @@ def before_returning_items(resource, request, lookup):
         traceback.print_exc()
 
 
-def on_fetched_resource_status(response):
+def on_fetched_resource_firstone(response):
     try:
         print("Returning first response element only")
         # Stash first entry
@@ -43,11 +44,12 @@ def on_fetched_resource_status(response):
         # Add stashed entry
         response.update(newresponse)
         # OPTIONAL: Pop off extra fields
-        response.pop('cloudhost', None)
-        response.pop('_updated', None)
-        response.pop('_id', None)
-        response.pop('_created', None)
-        response.pop('_etag', None)
+        if XTRAPOP:
+            response.pop('cloudhost', None)
+            response.pop('_updated', None)
+            response.pop('_id', None)
+            response.pop('_created', None)
+            response.pop('_etag', None)
 
     except Exception as e:
         print(e)
