@@ -13,7 +13,7 @@ import os
 import json
 import re
 import redis
-from models import (corpora, 
+from models import (corpora,
                     concepts,
                     documents,
                     relations,
