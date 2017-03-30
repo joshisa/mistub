@@ -33,7 +33,7 @@ __status__ = "Prototype"
 # capture current working directory
 PWD = os.getenv("PWD")
 # set root folder path
-ROOT_PATH = os.path.join(PWD, "macreduce")
+ROOT_PATH = os.path.join(PWD, "mistub")
 # set default host and ports (change 5000 to avoid airplay collision)
 APP_HOST = '0.0.0.0'
 APP_PORT = os.getenv('PORT', '5005')

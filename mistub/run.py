@@ -41,7 +41,7 @@ socket.setdefaulttimeout(240)
 # capture current working directory
 PWD = os.environ.get("PWD")
 # set static folder path for static data
-static_folder = os.path.join(PWD, "macreduce/static")
+static_folder = os.path.join(PWD, "mistub/static")
 
 # Detect if we are deployed within Bluemix or not and configure accordingly
 if VCAP_CONFIG:
