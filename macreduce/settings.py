@@ -13,7 +13,7 @@ import os
 import json
 import re
 import redis
-from models import (mac)
+from models import (corpora)
 
 __author__ = "Sanjay Joshi"
 __copyright__ = "IBM Copyright 2015"
@@ -126,5 +126,5 @@ X_HEADERS = ['Origin', 'X-Requested-With', 'Content-Type', 'Accept']
 # In order to allow for proper data validation, we define behaviour
 # and structure.
 DOMAIN = {
-    'mac': mac.schema,
+    'corpora': corpora.schema,
 }
