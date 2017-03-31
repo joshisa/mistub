@@ -19,7 +19,8 @@ from eve_swagger import swagger
 from routes import home
 from hooks.event import (before_returning_items,
                          after_returning_items,
-                         on_fetched_resource_firstone)
+                         on_fetched_resource_firstone,
+                         on_fetched_resource_xtrapop)
 from gevent import wsgi, monkey, socket
 import os
 from platform import python_version
@@ -79,6 +80,27 @@ app.on_fetched_resource_status += \
 
 app.on_fetched_resource_statushealthcheck += \
     on_fetched_resource_firstone
+
+app.on_fetched_resource_corpora += \
+    on_fetched_resource_firstone
+
+app.on_fetched_resource_corporastatistics += \
+    on_fetched_resource_firstone
+
+app.on_fetched_resource_corporaada += \
+    on_fetched_resource_firstone
+
+app.on_fetched_resource_corporaadagroups += \
+    on_fetched_resource_firstone
+
+app.on_fetched_resource_corporaadastatistics += \
+    on_fetched_resource_firstone
+
+app.on_fetched_resource_corporaadatypes += \
+    on_fetched_resource_firstone
+
+app.on_fetched_resource_corporaadagroupstypes += \
+    on_fetched_resource_xtrapop
 
 app.config['SWAGGER_INFO'] = {
     'title': 'MIstub API',

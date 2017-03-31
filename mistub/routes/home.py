@@ -20,7 +20,7 @@ from datetime import datetime, timedelta
 # capture current working directory
 PWD = os.environ.get("PWD")
 # set static folder path for static data
-static_folder = os.path.join(PWD, "macreduce/static")
+static_folder = os.path.join(PWD, "mistub/static")
 vcap = os.environ.get("VCAP_SERVICES")
 
 

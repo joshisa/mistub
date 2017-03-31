@@ -14,6 +14,12 @@ import json
 import re
 import redis
 from models import (corpora,
+                    corporastatistics,
+                    corporaada,
+                    corporaadagroups,
+                    corporaadastatistics,
+                    corporaadatypes,
+                    corporaadagroupstypes,
                     concepts,
                     documents,
                     relations,
@@ -140,6 +146,12 @@ X_HEADERS = ['Origin', 'X-Requested-With', 'Content-Type', 'Accept']
 # and structure.
 DOMAIN = {
     'corpora': corpora.schema,
+    'corporastatistics': corporastatistics.schema,
+    'corporaada': corporaada.schema,
+    'corporaadagroups': corporaadagroups.schema,
+    'corporaadastatistics': corporaadastatistics.schema,
+    'corporaadatypes': corporaadatypes.schema,
+    'corporaadagroupstypes': corporaadagroupstypes.schema,
     'concepts': concepts.schema,
     'documents': documents.schema,
     'relations': relations.schema,

@@ -38,7 +38,10 @@ def on_fetched_resource_firstone(response):
     try:
         print("Returning first response element only")
         # Stash first entry
-        newresponse = response['_items'][0]
+        if len(response['_items']) > 0:
+            newresponse = response['_items'][0]
+        else:
+            newresponse = {}
         # Trash entire item array
         del(response['_items'])
         # Add stashed entry
@@ -50,6 +53,26 @@ def on_fetched_resource_firstone(response):
             response.pop('_id', None)
             response.pop('_created', None)
             response.pop('_etag', None)
+    except Exception as e:
+        print(e)
+        traceback.print_exc()
+
+
+def on_fetched_resource_xtrapop(response):
+    try:
+        print("Returning xtrapop formatted response")
+        if len(response['_items']) > 0 and XTRAPOP:
+            for webster in response['_items']:
+                webster.pop('cloudhost', None)
+                webster.pop('_updated', None)
+                webster.pop('_id', None)
+                webster.pop('_created', None)
+                webster.pop('_etag', None)
+        myresponse = response['_items']
+        # Trash entire item array
+        del(response['_items'])
+        # Add stashed entry
+        response['types'] = myresponse
 
     except Exception as e:
         print(e)

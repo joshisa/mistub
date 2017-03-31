@@ -18,17 +18,77 @@ schema = {
             'type': 'string',
             'default': 'Powered by IBM Bluemix and Python Eve'
         },
-        'base16': {
-            'type': 'string',
-            'default': '######'
+        'corpora': {
+            'type': 'list',
+            'schema': {
+                'type': 'dict',
+                'schema': {
+                    'corpusName': {
+                        'type': 'string',
+                        'default': 'library_of_congress'
+                    },
+                    'descriptiveName': {
+                        'type': 'string',
+                        'default': 'Doh!MissingDescription'
+                    },
+                    'pathParams': {
+                        'type': 'list',
+                        'schema': {
+                            'type': 'string',
+                            'default': 'Doh!Missingparams'
+                        }
+                    },
+                    'latest': {
+                        'type': 'boolean',
+                        'default': False
+                    },
+                    'corpusVersion': {
+                        'type': 'string',
+                        'default': 'v1'
+                    },
+                    'umlsVersion': {
+                        'type': 'string',
+                        'default': 'Doh!MissingumlsVersion'
+                    },
+                    'umlsRelease': {
+                        'type': 'string',
+                        'default': 'Doh!MissingumlsRelease'
+                    },
+                    'access': {
+                        'type': 'string',
+                        'default': 'Doh!MissingAccess'
+                    },
+                    'defaultCorpus': {
+                        'type': 'boolean',
+                        'default': False
+                    },
+                    'sireSupported': {
+                        'type': 'boolean',
+                        'default': False
+                    },
+                    'annotators': {
+                        'type': 'dict'
+                    }
+                }
+            }
         },
-        'hex': {
-            'type': 'string',
-            'default': '##-##-##'
+        'disordersTypes': {
+            'type': 'list',
+            'schema': {
+                'type': 'string'
+            }
         },
-        'organization': {
-            'type': 'string',
-            'default': 'Doh!MissingOrg'
+        'drugTypes': {
+            'type': 'list',
+            'schema': {
+                'type': 'string'
+            }
+        },
+        'genesTypes': {
+            'type': 'list',
+            'schema': {
+                'type': 'string'
+            }
         }
     },
     'allow_unknown': True
